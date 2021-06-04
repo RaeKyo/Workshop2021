@@ -10,8 +10,16 @@ int main(){
 		printf("Enter the number  : ");
 		scanf("%d",&n);
 	}while(n<2);
-	printPrime(n);
 	
+	
+	int value =2; // initial value from 2
+	for(int i=1;i<n;i++){
+	
+		if(checkPrime(value)==1){
+			printf("%4d",value);
+		}
+		value++;
+	}
 	getchar();
 	return 0;
 }
@@ -25,14 +33,3 @@ int checkPrime(int n){
 	return res;
 }
 
-void printPrime(int n){
-	int count=1;
-	int value =2; // initial value from 2
-	while(count<n){
-		if(checkPrime(value)==1){
-			printf("%4d",value);
-			count++;
-		}
-		value++;
-	}
-}
